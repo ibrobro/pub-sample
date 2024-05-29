@@ -1,0 +1,22 @@
+{
+  "tasksRunnerOptions" :{
+    "default": {
+      "runner": "nx/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build"]
+      }
+    }
+  },
+  "namedInputs": {
+    "noMarkDown": ["!{projectRoot}/**/*.md"]
+  },
+  "targetDefaults": {
+    "build": {
+      "inputs": ["noMarkDown", "^noMarkDown"],
+      "dependsOn": ["^build"]
+    },
+    "dev": {
+      "dependsOn": ["^build"]
+    }
+  }
+}

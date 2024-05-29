@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "target": "ES2019",
+    "jsx": "react-jsx",
+    "declaration": true,
+    "outDir": "./dist"
+  },
+  "include": [
+    "src/**/*"
+  ]
+}

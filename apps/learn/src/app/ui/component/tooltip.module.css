@@ -1,0 +1,53 @@
+@value tooltip-text-color: white;
+@value tooltip-background-color: #60688d;
+@value tooltip-margin: 30px;
+@value tooltip-arrow-size: 6px;
+
+.container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tip {
+  position: absolute;
+  border-radius: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 16px;
+  color: tooltip-text-color;
+  background: tooltip-background-color;
+  font-size: 14px;
+  font-family: sans-serif;
+  z-index: 100;
+  white-space: nowrap;
+}
+
+.content {
+  position: relative;
+}
+
+.content p {
+  text-wrap: wrap;
+}
+
+.tip::before {
+  content: " ";
+  left: 50%;
+  border: solid transparent;
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-width: tooltip-arrow-size;
+  margin-left: calc(tooltip-arrow-size) * -1;
+}
+
+.tip.bottom {
+  bottom: calc(2*tooltip-margin) * -1;
+}
+/* CSS border triangles */
+.tip.bottom::before {
+  bottom: 100%;
+  border-bottom-color: tooltip-background-color;
+}
